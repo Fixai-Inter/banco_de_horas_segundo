@@ -8,7 +8,8 @@
     "dev:client": "node ./node_modules/vite/bin/vite.js",
     "dev:server": "node ./node_modules/tsx/dist/cli.mjs server/index.ts",
     "build": "node ./node_modules/typescript/bin/tsc && node ./node_modules/vite/bin/vite.js build",
-    "preview": "node ./node_modules/vite/bin/vite.js preview"
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "start": "node dist/server/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
