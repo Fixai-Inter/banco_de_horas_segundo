@@ -1,8 +1,12 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = Number(process.env.PORT ?? 3001);
@@ -10,6 +14,10 @@ const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN ?? 'http://localhost:5173';
 
 app.use(cors({ origin: FRONTEND_ORIGIN }));
 app.use(express.json());
+
+app.use(
+  express.static(path.resolve(__dirname, '..'))
+);
 
 interface GitHubTokenResponse {
   access_token?: string;
@@ -97,6 +105,10 @@ app.post('/api/auth/github/callback', async (req, res) => {
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
+});
+
+app.get('*', (_req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
 });
 
 app.listen(PORT, () => {
