@@ -8,7 +8,7 @@
     "dev:server": "tsx watch server/index.ts",
     "dev:client": "vite",
     "build": "npx tsc -p tsconfig.server.json && npx vite build",
-    "start": "node dist/server/index.js"
+    "start": "node build/server/index.js"
   },
   "dependencies": {
 
