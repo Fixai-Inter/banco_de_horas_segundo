@@ -6,7 +6,7 @@ Aplicação web para acompanhamento de horas semanais da equipe do segundo ano d
 
 ## Motivação
 
-Em projetos acadêmicos com múltiplos repositórios e membros trabalhando de forma assíncrona, é difícil ter visibilidade real de quanto cada pessoa está contribuindo semana a semana. Planilhas manuais se perdem, e ferramentas externas de time-tracking adicionam fricção desnecessária ao fluxo de trabalho, o que dificultaria nosso trabalho ao termos que adicionar as horas, comentários, detalhes de tudo que fizemos em outra plataforma.
+Em projetos acadêmicos com múltiplos repositórios e membros trabalhando, é difícil ter visibilidade real de quanto cada pessoa está contribuindo semana a semana. Planilhas manuais não funcionam, e ferramentas externa adicionam fricção desnecessária ao fluxo de trabalho, o que dificultaria nosso trabalho ao termos que adicionar as horas, comentários, detalhes de tudo que fizemos em outra plataforma.
 
 O Projeto do Banco de Horas resolve isso de forma simples, onde usa **o próprio GitHub como fonte de dados**, sem banco de dados externo, sem backend, e sem que a equipe precise sair do ambiente que já utiliza no dia a dia.
 
@@ -63,6 +63,7 @@ O restante do comentário pode ser qualquer texto, já que o sistema só lê o i
 O campo aceita os seguintes formatos:
 
 | Valor | Interpretação |
+|---|---|
 | `30m` | 30 minutos |
 | `2h30m` | 2 horas e 30 minutos |
 
@@ -114,6 +115,7 @@ src/
 ## Campos do GitHub Projects utilizados
 
 | Campo | Tipo | Uso |
+|---|---|---|
 | `Horas Trabalhadas` | Número | Total acumulado da issue, usado em métricas gerais |
 | `Status` | Select | Situação atual da issue no kanban |
 | `Sprint` | Iteration | Agrupamento por sprint(datas já bem definidas) |
